@@ -7,15 +7,13 @@ before_install:
   - tar xf arduino-1.6.13-linux64.tar.xz
   - sudo mv arduino-1.6.13 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
-  - mkdir $HOME/.arduino15
-#  - wget http://downloads.arduino.cc/libraries/library_index.json -O $HOME/.arduino15/library_index.json
 install:
   - arduino --install-library "WebSockets"
-#  - git clone https://github.com/Links2004/arduinoWebSockets $HOME/Arduino/libraries/WebSockets
   - arduino --pref "boardsmanager.additional.urls=http://arduino.esp8266.com/stable/package_esp8266com_index.json" --save-prefs
   - arduino --install-boards esp8266:esp8266
   - arduino --board esp8266:esp8266:generic --save-prefs
 script:
+  - echo Done.
 #  - arduino --verify --board esp8266:esp8266:generic $PWD/Alfa/EspScopeA0-Alfa/EspScopeA0-Alfa.ino
 #  - arduino --verify --board esp8266:esp8266:generic $PWD/Bravo/EspScopeA0-Bravo/EspScopeA0-Bravo.ino
 #  - arduino --verify --board esp8266:esp8266:generic $PWD/Charlie/EspScopeA0-Charlie/EspScopeA0-Charlie.ino
